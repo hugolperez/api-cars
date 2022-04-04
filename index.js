@@ -2,10 +2,9 @@ const express = require("express");
 const app = express();
 
 const { config } = require("./config/index");
+const carsApi = require("./routes/cars");
 
-app.get("/", function (req, res) {
-  res.json({ hello: "world" });
-});
+carsApi(app);
 
 app.listen(config.port, () =>
   console.log("Server listening on port, " + config.port)
